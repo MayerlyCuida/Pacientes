@@ -1,11 +1,12 @@
 
 #include "Cita.hpp" // Inclusión del archivo de cabecera de la clase Cita
+#include "Paciente.cpp"
 
 Cita::Cita() { // Implementación del constructor de la clase Cita
 }
-Cita::Cita(int idPaciente, int idMedico, string fecha, string hora) { // Implementación del constructor de la clase Cita
+Cita::Cita(Paciente paciente, int idMedico, string fecha, string hora) { // Implementación del constructor de la clase Cita
 //Para asignar los valores a los atributos de la clase se utiliza el operador this o el operador de resolución de ámbito ::
-    this->idPaciente = idPaciente; // Asigna el identificador del paciente
+    this->Paciente = paciente; // Asigna el identificador del paciente
     this->idMedico = idMedico; // Asigna el identificador del médico
     this->fecha = fecha; // Asigna la fecha de la cita
     this->hora = hora; // Asigna la hora de la cita
@@ -22,12 +23,12 @@ void Cita::setId(int id) { // Implementación del método que establece el ident
     this->id = id; // Asigna el identificador de la cita
 }
 
-int Cita::getIdPaciente() { // Implementación del método que devuelve el identificador del paciente
-    return idPaciente; // Devuelve el identificador del paciente
+int Cita::getPaciente() { // Implementación del método que devuelve el identificador del paciente
+    return Paciente; // Devuelve el identificador del paciente
 }
 
-void Cita::setIdPaciente(int idPaciente) { // Implementación del método que establece el identificador del paciente
-    this->idPaciente = idPaciente; // Asigna el identificador del paciente
+void Cita::setPaciente(Paciente paciente) { // Implementación del método que establece el identificador del paciente
+    this->Paciente = paciente; // Asigna el identificador del paciente
 }
 
 int Cita::getIdMedico() { // Implementación del método que devuelve el identificador del médico
@@ -55,5 +56,5 @@ void Cita::setHora(string hora) { // Implementación del método que establece l
 }
 
 string Cita::toString() { // Implementación del método que devuelve una cadena con la información de la cita
-    return "Cita [id=" + to_string(id) + ", idPaciente=" + to_string(idPaciente) + ", idMedico=" + to_string(idMedico) + ", fecha=" + fecha + ", hora=" + hora + "]";
+    return "Cita [id=" + to_string(id) + ", Paciente=" + to_string(Paciente.getId()) + ", idMedico=" + to_string(idMedico) + ", fecha=" + fecha + ", hora=" + hora + "]";
 }

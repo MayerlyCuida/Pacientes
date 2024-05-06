@@ -1,6 +1,7 @@
 
 #ifndef CITA_HPP // Esta directiva evita que el archivo se incluya más de una vez
 #define CITA_HPP // Esta directiva evita que el archivo se incluya más de una vez
+class Paciente;
 
 #include <string> // Inclusión de la librería string
 
@@ -9,12 +10,12 @@ using namespace std; // Se utiliza el espacio de nombres std para no tener que e
 class Cita { // Declaración de la clase Cita
 public: // Sección de métodos públicos
     Cita(); // Constructor de la clase
-    Cita(int idPaciente, int idMedico, string fecha, string hora); // Constructor de la clase
+    Cita(Paciente Paciente, int idMedico, string fecha, string hora); // Constructor de la clase
     virtual ~Cita(); // Destructor de la clase
     int getId(); // Método que devuelve el identificador de la cita
     void setId(int id); // Método que establece el identificador de la cita
-    int getIdPaciente(); // Método que devuelve el identificador del paciente
-    void setIdPaciente(int idPaciente); // Método que establece el identificador del paciente
+    int getPaciente(); // Método que devuelve el identificador del paciente
+    void setPaciente(Paciente Paciente); // Método que establece el identificador del paciente
     int getIdMedico(); // Método que devuelve el identificador del médico
     void setIdMedico(int idMedico); // Método que establece el identificador del médico
     string getFecha(); // Método que devuelve la fecha de la cita
@@ -25,7 +26,7 @@ public: // Sección de métodos públicos
 
 private: // Sección de atributos privados
     int id; // Atributo que almacena el identificador de la cita
-    int idPaciente; // Atributo que almacena el identificador del paciente
+    Paciente Paciente; // Atributo que almacena el identificador del paciente
     int idMedico; // Atributo que almacena el identificador del médico
     string fecha; // Atributo que almacena la fecha de la cita
     string hora; // Atributo que almacena la hora de la cita
